@@ -7,7 +7,50 @@ authors = [
     { name = "Napoleon Pempena", email = "napoleon@princeton.edu" }
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+typing_extensions; python_version<"3.11"
+]
+
+[project.optional-dependencies]
+
+test = [
+	"pytest",
+	"uncertainties"
+]
+
+extra = [
+	"sphinx", 
+	"furo", 
+	"myst_parser"
+]
+
+[tool.ruff]
+line-length = 120 # YOLO
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "F", #Pyflakes
+    "B", #flake8-bugbear
+    "A", #flake8-builtins 
+    "C4", #flake8-comprehensions
+    "ERA", #eradicate
+    "I", #isort
+    "PT", #flake8-pytest-style
+    "C90", #mccabe
+    "N", #pep8-naming
+    "E", #pycodestyle error
+    "PL" #Pylint
+    "RUF"
+    "UP"
+]
+ignore = ["A003"]
+extend-select ["B", "I", "RUF", "UP"]
+
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "tab"
 
 [build-system]
 requires = ["hatchling"]
