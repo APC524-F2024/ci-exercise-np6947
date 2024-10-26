@@ -41,11 +41,11 @@ select = [
     "N", #pep8-naming
     "E", #pycodestyle error
     "PL" #Pylint
-    "RUF"
-    "UP"
+    "RUF" #Ruff-specifc
+    "UP" #PyUpgrade
 ]
 ignore = ["A003"]
-extend-select ["B", "I", "RUF", "UP"]
+extend-select = ["B", "I", "RUF", "UP"]
 
 
 [tool.ruff.format]

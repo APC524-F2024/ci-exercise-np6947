@@ -15,6 +15,6 @@ def docs(session):
     Build docs.
     """
     session.install(".[docs]")
-    session.run("sphinx-build", "-b", "html", "docs/", "build/docs")
+    session.run("sphinx-build", "docs/", "build/docs")
 
 
